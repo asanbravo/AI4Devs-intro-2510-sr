@@ -1,11 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reverse String</title>    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reverse String</title>
+    <meta name="description" content="Invierte el orden de una cadena de texto usando JavaScript." />
+
+    <style>
+        :root{
+          --bg:#ffffff;
+          --fg:#111827;
+          --muted:#6b7280;
+          --primary:#2563eb;
+          --primary-pressed:#1e40af;
+          --ring:#93c5fd;
+          --surface:#f3f4f6;
+          --radius:14px;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+          margin:0;
+          font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+          background:var(--bg);
+          color:var(--fg);
+          line-height:1.4;
+        }
+        .container{
+          max-width: 1000px;
+          margin: 40px auto;
+          padding: 0 24px;
+        }
+        h1{
+          font-size: clamp(32px, 4vw, 56px);
+          margin: 0 0 24px 0;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+        }
+
+        .row{
+          display:flex;
+          gap:16px;
+          align-items:center;
+          flex-wrap:wrap;
+        }
+
+        .input{
+          flex:1 1 520px;
+          min-width:280px;
+          padding: 18px 20px;
+          border:1px solid #e5e7eb;
+          border-radius: var(--radius);
+          background:#fff;
+          font-size:18px;
+          outline:none;
+          transition: box-shadow .15s, border-color .15s;
+        }
+        .input::placeholder{ color: var(--muted); }
+        .input:focus{
+          border-color: var(--ring);
+          box-shadow: 0 0 0 4px color-mix(in oklab, var(--ring) 35%, transparent);
+        }
+
+        .btn{
+          display:inline-flex;
+          align-items:center;
+          gap:10px;
+          padding:14px 18px;
+          border-radius: var(--radius);
+          border:1px solid transparent;
+          font-weight:600;
+          cursor:pointer;
+          user-select:none;
+          transition: background .15s, transform .02s, box-shadow .15s;
+        }
+        .btn:active{ transform: translateY(1px); }
+
+        .btn-primary{
+          background: var(--primary);
+          color: #fff;
+          box-shadow: 0 6px 18px color-mix(in oklab, var(--primary) 28%, transparent);
+        }
+        .btn-primary:hover{ background: color-mix(in oklab, var(--primary) 90%, #fff); }
+        .btn-primary:active{ background: var(--primary-pressed); }
+
+        .result{
+          margin-top: 28px;
+          font-size: clamp(22px, 2.5vw, 32px);
+          font-weight: 600;
+          word-break: break-word;
+        }
+
+        .copy-wrap{
+          margin-top: 16px;
+        }
+        .btn-ghost{
+          background: var(--surface);
+          color: var(--fg);
+          border-color: #e5e7eb;
+        }
+        .btn-ghost:hover{ background:#eaecef; }
+
+        .icon{
+          width:20px;height:20px;display:inline-block
+        }
+        /* Reduce motion for quien lo prefiera */
+        @media (prefers-reduced-motion: reduce){
+          .btn{ transition:none }
+          .input{ transition:none }
+        }
+    </style>
+    <link rel="icon" href="data:,">
+    <script src="script.js" defer></script>
 </head>
 <body>
-<script src="script.js"></script>
+<main class="container" role="main">
+    <h1>Reverse String</h1>
+
+    <div class="row" aria-label="Reversor de cadena">
+        <label class="sr-only" for="inputText">Introduce el texto a invertir</label>
+        <input
+                id="inputText"
+                class="input"
+                type="text"
+                inputmode="text"
+                placeholder="Hello, welcome to AI4Devs"
+                value="Hello, welcome to AI4Devs"
+                autocomplete="off"
+                aria-describedby="hint"
+        />
+        <button id="reverseBtn" class="btn btn-primary" type="button" aria-label="Invertir texto">
+            <!-- Icono recargar -->
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M21 12a9 9 0 1 1-2.64-6.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 3v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Reverse</span>
+        </button>
+    </div>
+
+    <p id="hint" style="margin:10px 0 0;color:var(--muted);font-size:14px">
+        Pulsa <kbd>Enter</kbd> o el botón para invertir la cadena.
+    </p>
+
+    <div id="result" class="result" aria-live="polite"></div>
+
+    <div class="copy-wrap">
+        <button id="copyBtn" class="btn btn-ghost" type="button" aria-label="Copiar resultado" disabled>
+            <!-- Icono portapapeles -->
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M6 15V5a2 2 0 0 1 2-2h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Copy</span>
+        </button>
+    </div>
+</main>
 </body>
 </html>
