@@ -1,3 +1,6 @@
+URL: **https://gemini.google.com/share/3d6a749535dd**
+Modelo: 2.5 Pro
+
 Actúa como experto en HTML, Javascript, con años de experiencia y buenas prácticas.
 
 Me han mandado codificar en HTML y JavaScript con la siguiente descripción funcional "Crea una página web con lógica en javascript que invierta el orden de una cadena de texto. Ejemplo: si introduzco AI4Devs devuelve sveD4IA." 
@@ -13,5 +16,3 @@ No se quiere levantar ningún servidor con express, quieren HTML y Javascript pl
 Además, te adjunto un screeshoot de cómo quieren que se vea la web en HTML para que lo tomes de referencia de cara al diseño.
 
 Quiero que me devuelvas el código HTML que tengo que insertar en index.html y las el código javascript javascript en script.js para que la página web luzca como el screenshoot y haga lo que indica la descripción funcional.
-
-![img.png](img.png)
