@@ -1,4 +1,4 @@
-URL: **https://gemini.google.com/share/3d6a749535dd**
+URL: **https://claude.ai/share/2a8be006-cf97-4465-b5d0-b9f63f54fee4**
 Modelo: Sonnet 4.5
 
 Actúa como experto en HTML, Javascript, con años de experiencia y buenas prácticas.
